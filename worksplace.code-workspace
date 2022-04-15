@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			".tsconfig.json": true,
+			"yarn.lock": true,
+			"yarn-error.log": true,
+		}
+	}
+}
