@@ -1,12 +1,9 @@
 import path from "path";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
-import WebpackPwaManifest from "webpack-pwa-manifest";
-import { InjectManifest } from "workbox-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 export default () => ({
 	mode: "production",
@@ -14,8 +11,8 @@ export default () => ({
 	plugins: [
 		new CleanWebpackPlugin(),
 		new InjectManifest({
-			swSrc: "./web/react/sw.js",
-			swDest: "sw.js",
+			swSrc: "./web/serviceWorker",
+			swDest:"sw.js",
 			exclude: [ /\.map$/, /^manifest.*\.js(?:on)?$/, /\.(jpe?g|png|webp)$/i ],
 			maximumFileSizeToCacheInBytes: 3*1024*1024
 		}),
@@ -37,8 +34,8 @@ export default () => ({
 	],
 	optimization:{
 		minimizer:[
-			new TerserPlugin(),
 			new CssMinimizerPlugin(),
+			new TerserPlugin(),
 		],
 		splitChunks: {
 			chunks: "all",

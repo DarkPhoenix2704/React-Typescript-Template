@@ -72,7 +72,7 @@ export default () => ({
 	},
 	plugins: [
 		new  webpack.ProvidePlugin({
-			Buffer: ["buffer","Buffer"]
+			Buffer: ["buffer", "Buffer"]
 		}),
 		new MiniCssExtractPlugin({filename: "bundle.[contenthash].css"}),
 		new HtmlWebpackPlugin({
