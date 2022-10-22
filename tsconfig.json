@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "jsx": "react",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "module": "CommonJS",
+        "noImplicitAny": true,
+        "outDir": "./build/",
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "target": "ES2015",
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noUnusedParameters": true,
+        "removeComments": true
+    },
+    "exclude": ["node_modules", "build"]
+}
